@@ -5,16 +5,29 @@
 
 let stars = 0;
 
+
 // STAR PROGRESS
 function addStars(amount = 10) {
-  stars += amount;
+    stars += amount;
 
-  document.getElementById("starCount").textContent = stars;
-  document.getElementById("progressStars").textContent =
-    `${Math.min(stars, 100)} / 100 stars`;
+    const starCount = document.getElementById("starCount");
+    const progressStars = document.getElementById("progressStars");
+    const progressBar = document.getElementById("progressBar");
 
-  const progress = Math.min((stars / 100) * 100, 100);
-  document.getElementById("progressBar").style.width = progress + "%";
+    if (starCount) {
+        starCount.textContent = stars;
+    }
+
+    if (progressStars) {
+        progressStars.textContent = stars;
+    }
+
+    if (progressBar) {
+        const progress = Math.min(stars, 100);
+        progressBar.style.width = progress + "%";
+    }
+}
+ressBar").style.width = progress + "%";
 }
 
 // MODAL
@@ -37,16 +50,24 @@ document.getElementById("activityModal").addEventListener("click", function(even
   if (event.target === this) closeModal();
 });
 
+
 // MOBILE NAVIGATION
-document.getElementById("menuToggle").addEventListener("click", function() {
-  document.getElementById("navLinks").classList.toggle("active");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
 });
 
 document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("navLinks").classList.remove("active");
-  });
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
 });
+
 
 // ==================================
 // BRAIN QUIZ
@@ -484,11 +505,14 @@ function changeColor(color) {
   brushColor = color;
 }
 
+
 function clearDrawing() {
-  if (ctx && canvas) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
+    if (ctx && canvas) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawing = false;
+    }
 }
+
 
 function saveDrawing() {
   if (!canvas) return;
