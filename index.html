@@ -2,145 +2,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+    <title>WonderKids - Learn, Play & Grow</title>
+    <meta name="description" content="Welcome to WonderKids! Explore fun games, magical stories, creative activities and learning adventures for kids.">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Main JavaScript -->
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<header class="navbar">
-  <a href="#" class="logo">
-    <span class="logo-star">⭐</span>
-    <span>Wonder<span class="pink">Kids</span>
-            <small>Learn • Play • Grow</small>
-        </span>
-  </a>
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-star">⭐</span>
+            <span>
+                Wonder<span class="pink">Kids</span>
+                <small>Learn • Play • Grow</small>
+            </span>
+        </a>
 
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            ☰
+        </button>
 
-  <nav id="navLinks">
-    <a href="#home">🏠 Home</a>
-    <a href="#activities">🎮 Games</a>
-    <a href="#stories">📚 Stories</a>
-    <a href="#learn">🎓 Learn</a>
-    <a href="#creative">🎨 Create</a>
-  </nav>
+        <nav id="navLinks">
+            <a href="#home">🏠 Home</a>
+            <a href="#activities">🎮 Games</a>
+            <a href="#stories">📚 Stories</a>
+            <a href="#learn">🎓 Learn</a>
+            <a href="#creative">🎨 Create</a>
+        </nav>
 
-  <div class="star-count">⭐ <span id="starCount">0</span></div>
-</header>
+        <div class="star-count">
+            ⭐ <span id="starCount">0</span>
+        </div>
+    </header>
 
-<main>
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <span class="welcome-tag">✨ A magical world awaits!</span>
-      <h1>Welcome to <span>WonderKids!</span></h1>
-      <p>Where little minds grow, big dreams shine, and every day is an adventure!</p>
-      <a href="#activities" class="main-btn">Let's Explore 🚀</a>
-      <div class="hero-facts">
-        <span>🌈 Learn</span>
-        <span>🎮 Play</span>
-        <span>⭐ Discover</span>
-      </div>
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="welcome-tag">
+                    ✨ A magical world awaits!
+                </span>
+
+                <h1>Welcome to <span>WonderKids!</span></h1>
+
+                <p>
+                    Where little minds grow, big dreams shine,
+                    and every day is an adventure!
+                </p>
+
+                <a href="#activities" class="main-btn">
+                    Let's Explore 🚀
+                </a>
+
+                <div class="hero-facts">
+                    <span>🌈 Learn</span>
+                    <span>🎮 Play</span>
+                    <span>⭐ Discover</span>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="sun">☀️</div>
+                <div class="rainbow">🌈</div>
+                <div class="main-character">🧒🏻</div>
+                <div class="side-character">🐻</div>
+                <div class="floating-star">⭐</div>
+                <div class="hero-cloud">☁️</div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section class="section" id="activities">
+
+            <div class="section-heading">
+                <span>🎉 LET'S HAVE FUN</span>
+                <h2>Choose Your Adventure!</h2>
+                <p>What would you like to explore today?</p>
+            </div>
+
+            <div class="activity-grid">
+
+                <article class="activity-card pink-card" id="creative">
+                    <div class="card-emoji">🎨</div>
+                    <h3>Creative Corner</h3>
+                    <p>Color, draw and create something wonderful!</p>
+                    <button onclick="openColoring()">
+                        Start Creating →
+                    </button>
+                </article>
+
+                <article class="activity-card yellow-card">
+                    <div class="card-emoji">🧩</div>
+                    <h3>Brain Games</h3>
+                    <p>Play fun quizzes and train your brain!</p>
+                    <button onclick="startQuiz()">
+                        Play Quiz →
+                    </button>
+                </article>
+
+                <article class="activity-card purple-card" id="stories">
+                    <div class="card-emoji">📖</div>
+                    <h3>Story World</h3>
+                    <p>Discover magical stories and adventures!</p>
+                    <button onclick="readStory()">
+                        Read Story →
+                    </button>
+                </article>
+
+                <article class="activity-card green-card" id="learn">
+                    <div class="card-emoji">🔢</div>
+                    <h3>Learn & Play</h3>
+                    <p>Explore alphabets, numbers and shapes!</p>
+                    <button onclick="learnSomething()">
+                        Start Learning →
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Adventure and Achievements -->
+        <section class="adventure-section">
+
+            <div class="adventure-box">
+                <div class="section-heading">
+                    <span>🐢 TODAY'S ADVENTURE</span>
+                    <h2>Meet Benny the Turtle!</h2>
+                </div>
+
+                <div class="turtle">🐢</div>
+
+                <p>
+                    Benny loves exploring the ocean
+                    and helping his friends.
+                </p>
+
+                <button class="main-btn" onclick="readStory()">
+                    Discover Benny's Story →
+                </button>
+            </div>
+
+            <div class="progress-box">
+                <div class="section-heading">
+                    <span>🏆 YOUR ACHIEVEMENTS</span>
+                    <h2>Little Superstar!</h2>
+                </div>
+
+                <div class="big-star">⭐</div>
+
+                <h3>
+                    <span id="progressStars">0</span>
+                    Stars Collected
+                </h3>
+
+                <p>Keep exploring and collecting rewards!</p>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+                <p class="level">🌟 Beginner Explorer</p>
+            </div>
+
+        </section>
+
+        <!-- Motivation Section -->
+        <section class="quote-section">
+            <h2>💖 A Little Reminder</h2>
+            <p>
+                "Every great adventure begins with curiosity!"
+            </p>
+            <span>Keep smiling, keep learning! 🌈</span>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">🌟 WonderKids</div>
+        <p>Learn Today • Shine Tomorrow!</p>
+        <p class="footer-small">
+            Made with 💖 for little explorers.
+        </p>
+    </footer>
+
+    <!-- Activity Popup -->
+    <div
+        class="modal"
+        id="activityModal"
+        aria-hidden="true">
+
+        <div class="modal-content">
+            <button
+                class="close-btn"
+                onclick="closeModal()"
+                aria-label="Close">
+                ✖
+            </button>
+
+            <div id="modalContent"></div>
+        </div>
+
     </div>
-
-    <div class="hero-art">
-      <div class="sun">☀️</div>
-      <div class="rainbow">🌈</div>
-      <div class="main-character">🧒🏻</div>
-      <div class="side-character">🐻</div>
-      <div class="floating-star">⭐</div>
-      <div class="hero-cloud">☁️</div>
-    </div>
-  </section>
-
-  <section class="section" id="activities">
-    <div class="section-heading">
-      <span>🎉 LET'S HAVE FUN</span>
-      <h2>Choose Your Adventure!</h2>
-      <p>What would you like to explore today?</p>
-    </div>
-
-    <div class="activity-grid">
-      <article class="activity-card pink-card" id="creative">
-        <div class="card-emoji">🎨</div>
-        <h3>Creative Corner</h3>
-        <p>Color, draw and create something wonderful!</p>
-        <button onclick="openColoring()">Start Creating →</button>
-      </article>
-
-      <article class="activity-card yellow-card">
-        <div class="card-emoji">🧩</div>
-        <h3>Brain Games</h3>
-        <p>Play fun quizzes and train your brain!</p>
-        <button onclick="startQuiz()">Play Quiz →</button>
-      </article>
-
-      <article class="activity-card purple-card" id="stories">
-        <div class="card-emoji">📖</div>
-        <h3>Story World</h3>
-        <p>Discover magical stories and adventures!</p>
-        <button onclick="readStory()">Read Story →</button>
-      </article>
-
-      <article class="activity-card green-card" id="learn">
-        <div class="card-emoji">🔢</div>
-        <h3>Learn & Play</h3>
-        <p>Explore alphabets, numbers and shapes!</p>
-        <button onclick="learnSomething()">Start Learning →</button>
-      </article>
-    </div>
-  </section>
-
-  <section class="adventure-section">
-    <div class="adventure-box">
-      <div class="section-heading">
-        <span>🐢 TODAY'S ADVENTURE</span>
-        <h2>Meet Benny the Turtle!</h2>
-      </div>
-      <div class="turtle">🐢</div>
-      <p>Benny loves exploring the ocean and helping his friends.</p>
-      <button class="main-btn" onclick="readStory()">Discover Benny's Story →</button>
-    </div>
-
-    <div class="progress-box">
-      <div class="section-heading">
-        <span>🏆 YOUR ACHIEVEMENTS</span>
-        <h2>Little Superstar!</h2>
-      </div>
-      <div class="big-star">⭐</div>
-      <h3><span id="progressStars">0</span> Stars Collected</h3>
-      <p>Keep exploring and collecting rewards!</p>
-      <div class="progress-track">
-        <div id="progressBar"></div>
-      </div>
-      <p class="level">🌟 Beginner Explorer</p>
-    </div>
-  </section>
-
-  <section class="quote-section">
-    <h2>💖 A Little Reminder</h2>
-    <p>"Every great adventure begins with curiosity!"</p>
-    <span>Keep smiling, keep learning! 🌈</span>
-  </section>
-</main>
-
-<footer>
-  <div class="footer-logo">🌟 WonderKids</div>
-  <p>Learn Today • Shine Tomorrow!</p>
-  <p class="footer-small">Made with 💖 for little explorers.</p>
-</footer>
-
-<!-- Interactive activity popup -->
-<div class="modal" id="activityModal" aria-hidden="true">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeModal()" aria-label="Close">✖</button>
-    <div id="modalContent"></div>
-  </div>
-</div>
 
 </body>
 </html>
